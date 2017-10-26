@@ -61,11 +61,11 @@ app.delete('/todos/:id', (req, res) => {
     if(!todo){
       return res.status(404).send({status:'404', statusText:'Unable to find ID'});
     }
-    res.send(todo);
+    res.send({todo});
   }) .catch((e) => {
       return res.status(404).send();
   })
-  
+
 });
 
 app.listen(port, () => {
